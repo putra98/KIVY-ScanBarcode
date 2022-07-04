@@ -1,0 +1,162 @@
+
+#: import environ os.environ
+#: import gch kivy.utils.get_color_from_hex
+
+#: import StiffScrollEffect kivymd.stiffscroll.StiffScrollEffect
+<RootScreen>:
+    MDBottomNavigation:
+        panel_color: 1, 1, 1, 1
+        text_color_active: gch("#3EAF76")
+
+        MDBottomNavigationItem:
+            name: 'screen 1'
+            icon: 'home'
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(30),dp(0),dp(30),dp(30)
+                spacing: dp(10)
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                GridLayout:
+                    # size_hint_y: None
+                    orientation: 'lr-tb'
+                    size_hint_y: .5
+                    # lr-tb
+                    cols:2
+                    Image:
+                        size: (10,200)
+                        source: 'assets/images/logo.png'
+                    MDBoxLayout:
+                        MDLabel:
+
+                        MDIconButton:
+                            pos_hint: {'center_y': .5}
+                            user_font_size: "30sp"
+                            icon: "calendar-month"
+                            on_release: app.root.current = "scan_name"
+
+                MDLabel:
+                    text: 'Tourist or tourist professionals be it a brochure, a leaflet, a price-list, or a catalog. The present paper makes an attempt to analyze the language of tourism used to create a tourist text and particularly tourism terminology used in the process.\n\nTourist or tourist professionals be it a brochure, a leaflet, a price-list, or a catalog. The present paper makes an attempt to analyze the language of tourism used to create a tourist text and particularly tourism terminology used in the process'
+                    halign: 'left'
+                    font_style: "Caption"
+                    # size_hint_y: None
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    padding: dp(30),dp(30),dp(30),dp(30)
+                    spacing: dp(10)
+                    canvas.before:
+                        Color:
+                            rgba: 0,1,0,.5
+                        Rectangle:
+                            pos:self.pos
+                            size:self.size
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            icon: 'chart-pie'
+            text_color_normal: gch("#3EAF76")
+            text_color_active: gch("#3EAF76")
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(30),dp(0),dp(30),dp(30)
+                spacing: dp(10)
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                GridLayout:
+                    # size_hint_y: None
+                    orientation: 'lr-tb'
+                    size_hint_y: .25
+                    # lr-tb
+                    cols:2
+                    Image:
+                        size: (10,200)
+                        source: 'assets/images/logo.png'
+                    MDBoxLayout:
+                        MDLabel:
+
+                        MDIconButton:
+                            pos_hint: {'center_y': .5}
+                            user_font_size: "30sp"
+                            icon: "calendar-month"
+                            on_release: app.root.current = "home3_name"
+                MDBoxLayout:
+                    ScrollView:
+
+                        MDList:
+                            padding: dp(0),dp(50),dp(0),dp(30)
+                            OneLineAvatarIconListItem:
+                                on_release: print("Click!")
+
+                                IconLeftWidget:
+                                    icon: ""
+
+                            MDLabel:
+                                text: 'Tourist or tourist professionals be it a brochure, a leaflet, a price-list, or a catalog. The present paper makes an attempt to analyze the language of tourism used to create a tourist text and particularly tourism terminology used in the process.ist or tourist professionals be it a brochure, a leaflet, a price-list, or a catalog. The present paper makes an attempt to analyze the language of tourism used to create a tourist text and particularly tourism terminology used in the process'
+                                halign: 'left'
+                                font_style: "Caption"
+
+            MDFloatingActionButtonSpeedDial:
+                data: root.data
+                bg_hint_color: [0,1,0,1]
+                root_button_anim: True
+                callback: root.callback
+                bg_color_stack_button: gch("#3EAF76")
+                bg_color_root_button:gch("#3EAF76")
+                label_text_color: gch("#FCFDFC")
+
+        MDBottomNavigationItem:
+            name: 'screen 3'
+            icon: 'cog'
+            text_color_active: gch("#3EAF76")
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(30),dp(0),dp(30),dp(30)
+                spacing: dp(10)
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                GridLayout:
+                    # size_hint_y: None
+                    orientation: 'lr-tb'
+                    size_hint_y: .5
+                    # lr-tb
+                    cols:2
+                    Image:
+                        size: (10,200)
+                        source: 'assets/images/logo.png'
+                    MDBoxLayout:
+                        MDLabel:
+
+                        MDIconButton:
+                            pos_hint: {'center_y': .5}
+                            user_font_size: "30sp"
+                            icon: "calendar-month"
+                            on_release: app.root.current = "scan_name"
+
+                MDLabel:
+                    text: 'Tourist or tourist professionals be it a brochure, a leaflet, a price-list, or a catalog. The present paper makes an attempt to analyze the language of tourism used to create a tourist text and particularly tourism terminology used in the process.\n\nTourist or tourist professionals be it a brochure, a leaflet, a price-list, or a catalog. The present paper makes an attempt to analyze the language of tourism used to create a tourist text and particularly tourism terminology used in the process'
+                    halign: 'left'
+                    font_style: "Caption"
+                    # size_hint_y: None
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    padding: dp(30),dp(30),dp(30),dp(30)
+                    spacing: dp(10)
+                    canvas.before:
+                        Color:
+                            rgba: 0,1,0,.5
+                        Rectangle:
+                            pos:self.pos
+                            size:self.size
+

@@ -1,0 +1,44 @@
+
+#: import environ os.environ
+#: import gch kivy.utils.get_color_from_hex
+#: import StiffScrollEffect kivymd.stiffscroll.StiffScrollEffect
+
+
+
+
+<HomeScreen>:
+# Screen:
+
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(30),dp(30),dp(30),dp(30)
+        spacing: dp(10)
+        canvas.before:
+            Color:
+                rgba: 1,1,1,1
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        Image:
+            source: 'assets/images/logo.png'
+            pos_hint: {'center_x': .3}
+            size_hint: (1, .5)
+
+        MDLabel:
+        	text: 'Aplikasi Scan QRcode dan \n Input Data Produksi'
+            halign: 'center'
+            bold: True
+            font_style: "H6"
+
+        MDRaisedButton:
+        	text: 'Get`s Started'
+        	md_bg_color: gch("#3EAF76")
+            pos_hint: {'center_x': .5}
+            on_release: app.root.current = "root_name"
+        MDRaisedButton:
+        	text: 'Sign In'
+        	md_bg_color: gch("#3EAF76")
+            pos_hint: {'center_x': .5}
+        Widget:
+

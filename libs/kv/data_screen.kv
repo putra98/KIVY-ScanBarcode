@@ -1,0 +1,33 @@
+#: import environ os.environ
+#: import gch kivy.utils.get_color_from_hex
+
+#: import StiffScrollEffect kivymd.stiffscroll.StiffScrollEffect
+#: import ZBarCam kivy_garden.zbarcam.ZBarCam
+#: import ZBarSymbol pyzbar.pyzbar.ZBarSymbol
+
+
+
+
+<DataScreen>:
+# Screen:
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Data"
+            type: "bottom"
+            specific_text_color: gch("#060606")
+            left_action_items: [["keyboard-backspace", lambda x: root.back()]]
+            right_action_items: [["refresh", lambda x: root.view()]]
+        MDBoxLayout
+            orientation: 'vertical'
+            MDLabel:
+                text: 'Data Barang'  
+                font_style: 'H5'
+                bold: True
+                halign: 'center'
+                size_hint_y: .1
+            MDBoxLayout
+                orientation:"vertical"
+                padding: [dp(10), dp(10), dp(10), dp(10)]
+                id: table_id

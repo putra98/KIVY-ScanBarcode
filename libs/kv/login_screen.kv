@@ -1,0 +1,85 @@
+#: import environ os.environ
+#: import gch kivy.utils.get_color_from_hex
+
+#: import StiffScrollEffect kivymd.stiffscroll.StiffScrollEffect
+
+
+
+
+<LoginScreen>:
+# Screen
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(30)
+        spacing: dp(30)
+        canvas.before:
+            Color:
+                rgba: 1,1,1,1
+            Rectangle:
+                pos:self.pos
+                size:self.size
+
+        MDLabel:
+            text: 'Masuk'
+            bold: True
+            halign: 'center'
+            font_style: "H6"
+            size_hint_y: None
+        MDTextField:
+            id:email_id
+            text: root.email_value
+            mode: 'rectangle'
+            hint_text: "NIK"
+            icon_right: "account"
+            color_mode: 'custom'
+            line_color_focus: gch("#3EAF76")
+
+        MDTextField:
+            id:password_id
+            text: root.pass_value
+            hint_text: "Password"
+            icon_right: "lock"
+            mode: 'rectangle'
+            color_mode: 'custom'
+            password: True
+            line_color_focus: gch("#3EAF76")
+        MDLabel:
+            id:success
+            size_hint_y: None
+            markup: True
+        MDRaisedButton:
+            text: 'Sign In'
+            md_bg_color: gch("#3EAF76")
+            pos_hint: {'center_x': .5}
+            width: dp(325) + (self.ids.lbl_txt.texture_size[0] - self.ids.lbl_txt.texture_size[0])
+            height: dp(200)
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_release: root.start('login')     
+        MDTextButton:
+            text: 'Create New Account'
+            pos_hint: {'center_x': .5}
+            color: gch("#3EAF76")
+            underline: True
+            on_release: app.root.current = "daftar_name"
+
+        Widget:
+
+
+<Loading>
+
+    orientation: "horizontal"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+    Widget:
+    MDSpinner:
+        active: True
+        size_hint: (None, None)
+        size:dp(100),dp(100)
+    Widget:
+
+
+
+
+

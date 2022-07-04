@@ -1,0 +1,81 @@
+#: import environ os.environ
+#: import gch kivy.utils.get_color_from_hex
+#: import StiffScrollEffect kivymd.stiffscroll.StiffScrollEffect
+
+
+
+
+<InputBarangScreen>:
+# Screen
+
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Input Data Barang"
+            type: "bottom"
+            specific_text_color: gch("#060606")
+            left_action_items: [["keyboard-backspace", lambda x: root.back()]]
+            
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: dp(40),dp(10),dp(40),dp(40)
+            spacing: dp(30)
+            ScrollView:
+                MDList:
+                    padding: dp(20)
+                    spacing: dp(30)
+                    MDTextField:
+                        id: kode_barang_id
+                        hint_text: "Kode Barang"
+                        mode: "rectangle"
+                        color_mode: 'custom'
+                        line_color_focus: gch("#3EAF76")
+
+                    MDTextField:
+                        id: nama_barang_id
+                        hint_text: "Kode Mesin"
+                        mode: "rectangle"
+                        color_mode: 'custom'
+                        # password: True
+                        line_color_focus: gch("#3EAF76")
+
+                    MDTextField:
+                        id: jumlah_id
+                        hint_text: "Jumlah"
+                        mode: "rectangle"
+                        color_mode: 'custom'
+                        line_color_focus: gch("#3EAF76")
+ 
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            padding: dp(30)
+            spacing: dp(30)
+            size_hint_y: None
+            MDRaisedButton:
+                text: 'Cancel'
+                md_bg_color: gch("#3EAF76")
+                on_release: app.root.current = "root_name"
+            MDLabel:
+                # size_hint_x: None
+            MDRaisedButton:
+                text: 'Save'
+                md_bg_color: gch("#51DBC9")
+                on_release: root.start('save')
+
+
+
+<Loading>
+
+    orientation: "horizontal"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+    Widget:
+    MDSpinner:
+        active: True
+        size_hint: (None, None)
+        size:dp(100),dp(100)
+    Widget:

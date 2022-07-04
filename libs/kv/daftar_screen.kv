@@ -1,0 +1,73 @@
+#: import environ os.environ
+#: import gch kivy.utils.get_color_from_hex
+
+#: import StiffScrollEffect kivymd.stiffscroll.StiffScrollEffect
+
+
+
+
+<DaftarScreen>:
+# Screen
+
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Daftar Akun"
+            type: "bottom"
+            specific_text_color: gch("#060606")
+            left_action_items: [["keyboard-backspace", lambda x: root.back()]]
+            
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: dp(50),dp(10),dp(50),dp(40)
+            spacing: dp(30)
+
+            MDTextField:
+                id:email_id
+                hint_text: "Fullname"
+                color_mode: 'custom'
+                mode: "rectangle"
+                line_color_focus: gch("#3EAF76")
+
+            MDTextField:
+                id:nik_id
+                hint_text: "Nik"
+                mode: "rectangle"
+                color_mode: 'custom'
+                line_color_focus: gch("#3EAF76")
+
+            MDTextField:
+                id:password_id
+                hint_text: "Password"
+                mode: "rectangle"
+                password: True
+                color_mode: 'custom'
+                line_color_focus: gch("#3EAF76")
+
+
+            MDRaisedButton:
+                text: 'Save'
+                md_bg_color: gch("#3EAF76")
+                pos_hint: {'center_x': .5}
+                width: dp(300)+(self.ids.lbl_txt.texture_size[0] - self.ids.lbl_txt.texture_size[0])
+                height: dp(200)
+                on_release:root.start('login')   
+            Widget:
+
+
+
+<Loading>
+
+    orientation: "horizontal"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+    Widget:
+    MDSpinner:
+        active: True
+        size_hint: (None, None)
+        size:dp(100),dp(100)
+    Widget:
+
